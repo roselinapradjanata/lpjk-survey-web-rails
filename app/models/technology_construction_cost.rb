@@ -1,0 +1,2 @@
+class TechnologyConstructionCost < ApplicationRecord
+end

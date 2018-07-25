@@ -1,0 +1,2 @@
+class TechnologyConstructionOrigin < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ConstructionProductType < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class TechnologyConstructionSuccessFactor < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class TechnologyConstructionAssessmentMethod < ApplicationRecord
+end

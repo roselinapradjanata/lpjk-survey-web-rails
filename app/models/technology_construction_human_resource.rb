@@ -1,0 +1,2 @@
+class TechnologyConstructionHumanResource < ApplicationRecord
+end

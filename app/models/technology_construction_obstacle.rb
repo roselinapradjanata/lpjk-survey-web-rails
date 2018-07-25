@@ -1,0 +1,2 @@
+class TechnologyConstructionObstacle < ApplicationRecord
+end
