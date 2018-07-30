@@ -1,0 +1,2 @@
+class TechnologyConstructionLevel < ApplicationRecord
+end

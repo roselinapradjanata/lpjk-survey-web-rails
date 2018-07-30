@@ -1,0 +1,2 @@
+class ConstructionProjectCost < ApplicationRecord
+end
