@@ -26,8 +26,23 @@ ConstructionProductType.create([
     { name: 'Infrastruktur' },
     { name: 'Industri' },
     { name: 'Perumahan' },
-    { name: 'Jasa' },
+    { name: 'Pengawasan' },
+    { name: 'Desain' },
+    { name: 'Studi' },
     { name: 'Other' }
+])
+
+ConstructionProjectCost.create([
+    { name: '< Rp.100.000.000.000' },
+    { name: 'Rp.100.000.000.000 - Rp.300.000.000.000' },
+    { name: 'Rp.300.000.000.000 - Rp.500.000.000.000' },
+    { name: 'Rp.500.000.000.000 - Rp.700.000.000.000' },
+    { name: 'Rp.900.000.000.000 - Rp.1.100.000.000.000' },
+    { name: 'Rp.1.100.000.000.000 - Rp.1.300.000.000.000' },
+    { name: 'Rp.1.300.000.000.000 - Rp.1.500.000.000.000' },
+    { name: 'Rp.1.500.000.000.000 - Rp.1.700.000.000.000' },
+    { name: 'Rp.1.700.000.000.000 - Rp.1.900.000.000.000' },
+    { name: '> Rp.1.900.000.000.000' }
 ])
 
 TechnologyConstructionStage.create([
@@ -108,6 +123,15 @@ TechnologyConstructionHumanResource.create([
     { name: 'Other' }
 ])
 
+TechnologyConstructionSupport.create([
+    { name: 'Informasi' },
+    { name: 'Mekanik' },
+    { name: 'Elektronik' },
+    { name: 'Material' },
+    { name: 'Proses' },
+    { name: 'Other' }
+])
+
 TechnologyConstructionSupplyChain.create([
     { name: 'Ya' },
     { name: 'Tidak' }
@@ -137,10 +161,9 @@ TechnologyConstructionAssessment.create([
     { name: 'Tidak' }
 ])
 
-TechnologyConstructionAssessmentMethod.create([
+TechnologyConstructionLevel.create([
+    { name: 'Emerging' },
+    { name: 'Growth' },
     { name: 'Maturity' },
-    { name: 'Performance' },
-    { name: 'Scalability' },
-    { name: 'Adoption' },
-    { name: 'Affordability' }
+    { name: 'Decline' }
 ])
