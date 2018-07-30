@@ -1,2 +1,0 @@
-class TechnologyConstructionAssessmentMethod < ApplicationRecord
-end
