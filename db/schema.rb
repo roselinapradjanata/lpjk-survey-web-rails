@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_043155) do
+ActiveRecord::Schema.define(version: 2018_08_08_035024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "category"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "company_categories", force: :cascade do |t|
     t.string "name"
@@ -37,6 +46,39 @@ ActiveRecord::Schema.define(version: 2018_07_30_043155) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.bigint "company_id"
+    t.string "construction_product_type"
+    t.string "applied_technology_construction"
+    t.string "first_applied_project"
+    t.string "first_applied_project_date"
+    t.string "first_applied_project_value"
+    t.string "technology_construction_stage"
+    t.string "technology_construction_type"
+    t.string "technology_construction_origin"
+    t.string "technology_construction_owner"
+    t.string "technology_construction_category"
+    t.string "technology_construction_primary_type"
+    t.string "technology_construction_benefit"
+    t.string "technology_construction_all_benefits"
+    t.string "technology_construction_cost"
+    t.string "technology_construction_success_factor"
+    t.string "technology_construction_all_success_factors"
+    t.string "technology_construction_obstacle"
+    t.string "technology_construction_all_obstacles"
+    t.string "technology_construction_human_resource"
+    t.string "technology_construction_support"
+    t.string "technology_construction_supply_chain"
+    t.string "technology_construction_supply_chain_origin"
+    t.string "technology_construction_innovation_origin"
+    t.string "technology_construction_innovation_category"
+    t.string "technology_construction_assessment"
+    t.string "technology_construction_level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_surveys_on_company_id"
   end
 
   create_table "technology_construction_assessments", force: :cascade do |t|
@@ -147,4 +189,5 @@ ActiveRecord::Schema.define(version: 2018_07_30_043155) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "surveys", "companies"
 end
