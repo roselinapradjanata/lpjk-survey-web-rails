@@ -3,10 +3,10 @@ class CreateSurveys < ActiveRecord::Migration[5.2]
     create_table :surveys do |t|
       t.references :company, foreign_key: true
       t.string :construction_product_type
-      t.string :applied_technology_construction
-      t.string :first_applied_project
-      t.string :first_applied_project_date
-      t.string :first_applied_project_value
+      t.string :technology_construction_applied
+      t.string :construction_project
+      t.date :construction_project_date
+      t.string :construction_project_cost
       t.string :technology_construction_stage
       t.string :technology_construction_type
       t.string :technology_construction_origin

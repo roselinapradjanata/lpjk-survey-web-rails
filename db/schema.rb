@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_08_08_035024) do
     t.string "name"
     t.string "location"
     t.string "category"
-    t.string "type"
+    t.string "business_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 2018_08_08_035024) do
   create_table "surveys", force: :cascade do |t|
     t.bigint "company_id"
     t.string "construction_product_type"
-    t.string "applied_technology_construction"
-    t.string "first_applied_project"
-    t.string "first_applied_project_date"
-    t.string "first_applied_project_value"
+    t.string "technology_construction_applied"
+    t.string "construction_project"
+    t.date "construction_project_date"
+    t.string "construction_project_cost"
     t.string "technology_construction_stage"
     t.string "technology_construction_type"
     t.string "technology_construction_origin"
