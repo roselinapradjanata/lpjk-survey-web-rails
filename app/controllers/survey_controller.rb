@@ -18,7 +18,7 @@ class SurveyController < ApplicationController
   end
 
   def create
-    survey = SurveyService.create_survey(params[:company_id], params[:survey])
+    survey = SurveyService.create_survey(params[:company_id], params)
     return render json: survey, status: :ok
   end
 

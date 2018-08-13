@@ -60,12 +60,10 @@ class SurveyService
   def self.create_survey(company_id, new_survey)
     survey = Survey.new
     survey.company_id = company_id
-    survey.construction_product_type = new_survey[:construction_product_type]
     survey.technology_construction_applied = new_survey[:technology_construction_applied]
     survey.construction_project = new_survey[:construction_project]
     survey.construction_project_date = new_survey[:construction_project_date]
     survey.construction_project_cost = new_survey[:construction_project_cost]
-    survey.technology_construction_stage = new_survey[:technology_construction_stage]
     survey.technology_construction_type = new_survey[:technology_construction_type]
     survey.technology_construction_origin = new_survey[:technology_construction_origin]
     survey.technology_construction_owner = new_survey[:technology_construction_owner]
@@ -73,13 +71,10 @@ class SurveyService
     survey.technology_construction_primary_type = new_survey[:technology_construction_primary_type]
     survey.technology_construction_benefit = new_survey[:technology_construction_benefit]
     survey.technology_construction_all_benefits = new_survey[:technology_construction_all_benefits]
-    survey.technology_construction_cost = new_survey[:technology_construction_cost]
     survey.technology_construction_success_factor = new_survey[:technology_construction_success_factor]
     survey.technology_construction_all_success_factors = new_survey[:technology_construction_all_success_factors]
     survey.technology_construction_obstacle = new_survey[:technology_construction_obstacle]
     survey.technology_construction_all_obstacles = new_survey[:technology_construction_all_obstacles]
-    survey.technology_construction_human_resource = new_survey[:technology_construction_human_resource]
-    survey.technology_construction_support = new_survey[:technology_construction_support]
     survey.technology_construction_supply_chain = new_survey[:technology_construction_supply_chain]
     survey.technology_construction_supply_chain_origin = new_survey[:technology_construction_supply_chain_origin]
     survey.technology_construction_innovation_origin = new_survey[:technology_construction_innovation_origin]
@@ -87,7 +82,24 @@ class SurveyService
     survey.technology_construction_assessment = new_survey[:technology_construction_assessment]
     survey.technology_construction_level = new_survey[:technology_construction_level]
     survey.save
-    return survey
+
+    new_survey[:construction_product_type].each do |name|
+      survey.construction_product_type_surveys.create(survey_id: survey.id, name: name)
+    end
+    new_survey[:technology_construction_stage].each do |name|
+      survey.technology_construction_stage_surveys.create(survey_id: survey.id, name: name)
+    end
+    new_survey[:technology_construction_cost].each do |name|
+      survey.technology_construction_cost_surveys.create(survey_id: survey.id, name: name)
+    end
+    new_survey[:technology_construction_human_resource].each do |name|
+      survey.technology_construction_human_res_surveys.create(survey_id: survey.id, name: name)
+    end
+    new_survey[:technology_construction_support].each do |name|
+      survey.technology_construction_support_surveys.create(survey_id: survey.id, name: name)
+    end
+
+    return new_survey
   end
 
 end
