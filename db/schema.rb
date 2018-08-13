@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_08_035024) do
+ActiveRecord::Schema.define(version: 2018_08_13_073639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2018_08_08_035024) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "construction_product_type_surveys", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_construction_product_type_surveys_on_survey_id"
   end
 
   create_table "construction_product_types", force: :cascade do |t|
@@ -94,10 +102,26 @@ ActiveRecord::Schema.define(version: 2018_08_08_035024) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "technology_construction_cost_surveys", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_technology_construction_cost_surveys_on_survey_id"
+  end
+
   create_table "technology_construction_costs", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "technology_construction_human_res_surveys", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_technology_construction_human_res_surveys_on_survey_id"
   end
 
   create_table "technology_construction_human_resources", force: :cascade do |t|
@@ -148,6 +172,14 @@ ActiveRecord::Schema.define(version: 2018_08_08_035024) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "technology_construction_stage_surveys", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_technology_construction_stage_surveys_on_survey_id"
+  end
+
   create_table "technology_construction_stages", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -172,6 +204,14 @@ ActiveRecord::Schema.define(version: 2018_08_08_035024) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "technology_construction_support_surveys", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_technology_construction_support_surveys_on_survey_id"
+  end
+
   create_table "technology_construction_supports", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -184,5 +224,10 @@ ActiveRecord::Schema.define(version: 2018_08_08_035024) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "construction_product_type_surveys", "surveys"
   add_foreign_key "surveys", "companies"
+  add_foreign_key "technology_construction_cost_surveys", "surveys"
+  add_foreign_key "technology_construction_human_res_surveys", "surveys"
+  add_foreign_key "technology_construction_stage_surveys", "surveys"
+  add_foreign_key "technology_construction_support_surveys", "surveys"
 end
