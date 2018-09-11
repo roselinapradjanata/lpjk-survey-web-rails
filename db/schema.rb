@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_13_073639) do
+ActiveRecord::Schema.define(version: 2018_09_11_113052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,10 +58,12 @@ ActiveRecord::Schema.define(version: 2018_08_13_073639) do
 
   create_table "surveys", force: :cascade do |t|
     t.bigint "company_id"
+    t.string "construction_product_type"
     t.string "technology_construction_applied"
     t.string "construction_project"
     t.date "construction_project_date"
     t.string "construction_project_cost"
+    t.string "technology_construction_stage"
     t.string "technology_construction_type"
     t.string "technology_construction_origin"
     t.string "technology_construction_owner"
@@ -69,10 +71,13 @@ ActiveRecord::Schema.define(version: 2018_08_13_073639) do
     t.string "technology_construction_primary_type"
     t.string "technology_construction_benefit"
     t.string "technology_construction_all_benefits"
+    t.string "technology_construction_cost"
     t.string "technology_construction_success_factor"
     t.string "technology_construction_all_success_factors"
     t.string "technology_construction_obstacle"
     t.string "technology_construction_all_obstacles"
+    t.string "technology_construction_human_resource"
+    t.string "technology_construction_support"
     t.string "technology_construction_supply_chain"
     t.string "technology_construction_supply_chain_origin"
     t.string "technology_construction_innovation_origin"
@@ -220,6 +225,13 @@ ActiveRecord::Schema.define(version: 2018_08_13_073639) do
 
   create_table "technology_construction_types", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

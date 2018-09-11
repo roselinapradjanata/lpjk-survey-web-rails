@@ -1,7 +1,5 @@
 class SurveyController < ApplicationController
 
-  skip_before_action :verify_authenticity_token
-
   def form
     form = SurveyService.get_form
     return render json: form, status: :ok
