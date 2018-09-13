@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_113052) do
+ActiveRecord::Schema.define(version: 2018_09_13_081327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2018_09_11_113052) do
     t.string "business_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
   create_table "company_categories", force: :cascade do |t|
@@ -236,6 +238,7 @@ ActiveRecord::Schema.define(version: 2018_09_11_113052) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "companies", "users"
   add_foreign_key "construction_product_type_surveys", "surveys"
   add_foreign_key "surveys", "companies"
   add_foreign_key "technology_construction_cost_surveys", "surveys"
