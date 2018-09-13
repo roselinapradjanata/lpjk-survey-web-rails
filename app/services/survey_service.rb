@@ -50,7 +50,7 @@ class SurveyService
   end
 
   def self.get_all(company_id)
-    return Company.find(company_id).surveys
+    return Company.find(company_id).surveys.to_json.gsub('\"', '"').gsub('"[', '[').gsub(']"', ']')
   end
 
   def self.get_survey(id)
