@@ -22,7 +22,8 @@ class UsersController < ApplicationController
     if auth.success?
       render json: {
         access_token: auth.result,
-        message: 'Login Successful'
+        message: 'Login Successful',
+        user: { company_id: UserService.get_company(params[:email]) }
       }
     else
       render json: { error: auth.errors }, status: :unauthorized

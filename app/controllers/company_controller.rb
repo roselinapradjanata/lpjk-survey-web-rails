@@ -1,14 +1,12 @@
 class CompanyController < ApplicationController
 
-  skip_before_action :verify_authenticity_token
-
   def show
     company = CompanyService.get_company_profile(params[:id])
     return render json: company, status: :ok
   end
 
   def create
-    company = CompanyService.create_company(company_params)
+    company = CompanyService.create_company(current_user.id, company_params)
     return render json: company, status: :ok
   end
 

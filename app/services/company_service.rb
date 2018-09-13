@@ -5,9 +5,9 @@ class CompanyService
     return company
   end
 
-  def self.create_company(new_company)
-    puts new_company
+  def self.create_company(user_id, new_company)
     company = Company.new(
+      user_id: user_id,
       name: new_company[:name],
       location: new_company[:location],
       category: new_company[:category],
