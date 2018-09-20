@@ -17,7 +17,7 @@ CompanyType.create([
     { name: 'Perusahaan Perseorangan' },
     { name: 'Koperasi' },
     { name: 'Badan Usaha Milik Negara (BUMN)' },
-    { name: 'Badan Usaha Milik Swasta (BUMS' },
+    { name: 'Badan Usaha Milik Swasta (BUMS)' },
     { name: 'Other' }
 ])
 
