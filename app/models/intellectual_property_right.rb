@@ -1,0 +1,2 @@
+class IntellectualPropertyRight < ApplicationRecord
+end

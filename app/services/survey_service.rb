@@ -23,6 +23,7 @@ class SurveyService
     technology_construction_supply_chains = TechnologyConstructionSupplyChainService.get_all
     technology_construction_supports = TechnologyConstructionSupportService.get_all
     technology_construction_types = TechnologyConstructionTypeService.get_all
+    intellectual_property_rights = IntellectualPropertyRightService.get_all
     return {
       company_categories: company_categories,
       company_types: company_types,
@@ -45,7 +46,8 @@ class SurveyService
       technology_construction_supply_chain_origins: technology_construction_supply_chain_origins,
       technology_construction_supply_chains: technology_construction_supply_chains,
       technology_construction_supports: technology_construction_supports,
-      technology_construction_types: technology_construction_types
+      technology_construction_types: technology_construction_types,
+      intellectual_property_rights: intellectual_property_rights
     }
   end
 
@@ -86,6 +88,7 @@ class SurveyService
     survey.technology_construction_innovation_category = new_survey[:technology_construction_innovation_category]
     survey.technology_construction_assessment = new_survey[:technology_construction_assessment]
     survey.technology_construction_level = new_survey[:technology_construction_level]
+    survey.intellectual_property_right = new_survey[:intellectual_property_right]
     survey.save
 
     return {

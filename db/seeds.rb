@@ -10,49 +10,41 @@ CompanyCategory.create([
     { name: 'Pemilik' },
     { name: 'Konsultan' },
     { name: 'Kontraktor' },
-    { name: 'Other' }
+    { name: 'Lain-Lain' }
 ])
 
 CompanyType.create([
     { name: 'Perusahaan Perseorangan' },
-    { name: 'Koperasi' },
     { name: 'Badan Usaha Milik Negara (BUMN)' },
-    { name: 'Badan Usaha Milik Swasta (BUMS)' },
-    { name: 'Other' }
+    { name: 'Badan Usaha Milik Swasta (BUMS)' }
 ])
 
 ConstructionProductType.create([
     { name: 'Gedung' },
     { name: 'Infrastruktur' },
     { name: 'Industri' },
-    { name: 'Perumahan' },
-    { name: 'Pengawasan' },
-    { name: 'Desain' },
-    { name: 'Studi' },
-    { name: 'Other' }
+    { name: 'Perumahan' }
+    # { name: 'Pengawasan' },
+    # { name: 'Desain' },
+    # { name: 'Studi' },
+    # { name: 'Lain-Lain' }
 ])
 
 ConstructionProjectCost.create([
-    { name: '< Rp.100.000.000.000' },
-    { name: 'Rp.100.000.000.000 - Rp.300.000.000.000' },
-    { name: 'Rp.300.000.000.000 - Rp.500.000.000.000' },
-    { name: 'Rp.500.000.000.000 - Rp.700.000.000.000' },
-    { name: 'Rp.900.000.000.000 - Rp.1.100.000.000.000' },
-    { name: 'Rp.1.100.000.000.000 - Rp.1.300.000.000.000' },
-    { name: 'Rp.1.300.000.000.000 - Rp.1.500.000.000.000' },
-    { name: 'Rp.1.500.000.000.000 - Rp.1.700.000.000.000' },
-    { name: 'Rp.1.700.000.000.000 - Rp.1.900.000.000.000' },
-    { name: '> Rp.1.900.000.000.000' }
+    { name: '< Rp 2.500.000.000' },
+    { name: 'Rp 2.500.000.000 - Rp 50.000.000.000' },
+    { name: 'Rp 50.000.000.000 - Rp 100.000.000.000' },
+    { name: '> Rp 100.000.000.000' }
 ])
 
 TechnologyConstructionStage.create([
     { name: 'Perencanaan' },
     { name: 'Perancangan' },
     { name: 'Konstruksi' },
-    { name: 'Pemanfaatan' },
-    { name: 'Pemeliharaan' },
-    { name: 'Pembongkaran' },
-    { name: 'Other' }
+    # { name: 'Pemanfaatan' },
+    # { name: 'Pemeliharaan' },
+    # { name: 'Pembongkaran' },
+    { name: 'Lain-Lain' }
 ])
 
 TechnologyConstructionType.create([
@@ -61,7 +53,7 @@ TechnologyConstructionType.create([
     { name: 'Material' },
     { name: 'Peralatan' },
     { name: 'Metode' },
-    { name: 'Other' }
+    { name: 'Lain-Lain' }
 ])
 
 TechnologyConstructionOrigin.create([
@@ -73,7 +65,7 @@ TechnologyConstructionOwner.create([
     { name: 'Kontraktor' },
     { name: 'Konsultan' },
     { name: 'Supplier' },
-    { name: 'Other' }
+    { name: 'Lain-Lain' }
 ])
 
 TechnologyConstructionCategory.create([
@@ -103,7 +95,7 @@ TechnologyConstructionCost.create([
     { name: 'Investasi' },
     { name: 'Operasi' },
     { name: 'Pemeliharaan' },
-    { name: 'Other' }
+    { name: 'Lain-Lain' }
 ])
 
 TechnologyConstructionSuccessFactor.create([
@@ -120,7 +112,7 @@ TechnologyConstructionHumanResource.create([
     { name: 'Tenaga Ahli' },
     { name: 'Tenaga Terampil' },
     { name: 'Tenaga Umum' },
-    { name: 'Other' }
+    { name: 'Lain-Lain' }
 ])
 
 TechnologyConstructionSupport.create([
@@ -129,7 +121,7 @@ TechnologyConstructionSupport.create([
     { name: 'Elektronik' },
     { name: 'Material' },
     { name: 'Proses' },
-    { name: 'Other' }
+    { name: 'Lain-Lain' }
 ])
 
 TechnologyConstructionSupplyChain.create([
@@ -152,8 +144,7 @@ TechnologyConstructionInovationCategory.create([
     { name: 'Pengembangan' },
     { name: 'Transfer' },
     { name: 'Beli' },
-    { name: 'Adopsi' },
-    { name: 'Other' }
+    { name: 'Adopsi' }
 ])
 
 TechnologyConstructionAssessment.create([
@@ -166,4 +157,10 @@ TechnologyConstructionLevel.create([
     { name: 'Growth' },
     { name: 'Maturity' },
     { name: 'Decline' }
+])
+
+IntellectualPropertyRight.create([
+    { name: 'Paten' },
+    { name: 'Merek Dagang' },
+    { name: 'Lisensi' }
 ])
