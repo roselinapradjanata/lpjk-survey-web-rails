@@ -56,7 +56,7 @@ class SurveyService
   end
 
   def self.get_survey(id)
-    return Survey.find(id)
+    return Survey.find(id).to_json.gsub('\"', '"').gsub('"[', '[').gsub(']"', ']')
   end
 
   def self.create_survey(company_id, new_survey)
