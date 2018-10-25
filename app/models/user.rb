@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  enum role: [:admin, :user]
   has_one :company
 
   validates_presence_of :email, :password_digest

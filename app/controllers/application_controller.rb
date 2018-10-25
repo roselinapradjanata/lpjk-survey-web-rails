@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     @current_user = AuthorizeRequest.call(request.headers).result
     render json: { error: 'Not Authorized' }, status: 401 unless @current_user
   end
+
+  def authenticate_admin
+    render json: { error: 'Not Authorized' }, status: 401 unless @current_user.admin?
+  end
 end

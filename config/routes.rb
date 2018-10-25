@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
 
   get '/survey', to: 'survey#form'
+  get '/surveys', to: 'admin#show_surveys'
 
   post 'auth/register', to: 'users#register'
   post 'auth/login', to: 'users#login'
