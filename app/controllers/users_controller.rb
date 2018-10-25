@@ -20,10 +20,14 @@ class UsersController < ApplicationController
   def authenticate(params)
     auth = AuthenticateUser.call(params[:email], params[:password])
     if auth.success?
+      current_user = UserService.get_user(params[:email])
       render json: {
         access_token: auth.result,
         message: 'Login Successful',
-        user: { company_id: UserService.get_company(params[:email]) }
+        user: {
+          company_id: UserService.get_company(params[:email]),
+          role: current_user.role
+        }
       }
     else
       render json: { error: auth.errors }, status: :unauthorized

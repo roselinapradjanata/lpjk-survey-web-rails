@@ -11,4 +11,9 @@ class UserService
     end
     return company.id
   end
+
+  def self.get_user(email)
+    user = User.where(email: email)
+    return user.first
+  end
 end
