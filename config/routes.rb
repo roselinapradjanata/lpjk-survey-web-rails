@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/survey', to: 'survey#form'
   get '/surveys', to: 'admin#show_surveys'
+  get '/companies', to: 'admin#show_companies'
 
   post 'auth/register', to: 'users#register'
   post 'auth/login', to: 'users#login'

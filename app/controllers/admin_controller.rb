@@ -6,4 +6,9 @@ class AdminController < ApplicationController
     return render json: surveys, status: :ok
   end
 
+  def show_companies
+    companies = AdminService.get_all_companies
+    return render json: companies, status: :ok
+  end
+
 end
