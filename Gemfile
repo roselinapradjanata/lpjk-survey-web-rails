@@ -66,3 +66,4 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'jwt'
 
 gem 'simple_command'
+gem "pry", "~> 0.11.3"
