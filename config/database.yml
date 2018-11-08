@@ -1,10 +1,11 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: <%= ENV['LPJK_SURVEY_WEB_DB_ADAPTER'] %>
+  encoding: <%= ENV['LPJK_SURVEY_WEB_DB_ENCODING'] %>
   database: <%= ENV['LPJK_SURVEY_WEB_DB_NAME'] %>
   username: <%= ENV['LPJK_SURVEY_WEB_DB_USERNAME'] %>
   password: <%= ENV['LPJK_SURVEY_WEB_DB_PASSWORD'] %>
   port: <%= ENV['LPJK_SURVEY_WEB_DB_PORT'] %>
+  host: <%= ENV['LPJK_SURVEY_WEB_DB_HOSTNAME'] %>
   pool: <%= ENV['LPJK_SURVEY_WEB_DB_CONN_POOL'] ? ENV['LPJK_SURVEY_WEB_DB_CONN_POOL'].to_i : 5 %>
 
 development:
