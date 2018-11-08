@@ -1,0 +1,2 @@
+class TechnologyConstructionInovationCategory < ApplicationRecord
+end

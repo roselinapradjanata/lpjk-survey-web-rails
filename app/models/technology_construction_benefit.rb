@@ -1,0 +1,2 @@
+class TechnologyConstructionBenefit < ApplicationRecord
+end
